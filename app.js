@@ -1,5 +1,31 @@
-let tabLinks = document.getElementsByClassName("tab-links");
-let tabContents = document.getElementsByClassName("tab-contents");
+const tabLinks = document.getElementsByClassName("tab-links");
+const tabContents = document.getElementsByClassName("tab-contents");
+const works = document.getElementsByClassName("work");
+const btn = document.getElementById("btn");
+let hidden = true;
+
+// Check if second row of elements are hidden and if so, display.
+// If however second row of elements are already displayed, hide.
+btn.addEventListener("click", event =>{
+  if(hidden){
+    for(work of works){
+      work.classList.remove("hidden");
+      btn.innerHTML = "See less";
+      hidden = false;
+    }
+  }
+  else{
+    let i = 0;
+    for(work of works){
+      if(i > 2){
+        work.classList.add("hidden");
+      }
+      i++;
+      btn.innerHTML = "See more";
+      hidden = true;
+    }
+  }
+})
 
 function openTab(tabName){
   // Remove 'active-link' class from all tab links
