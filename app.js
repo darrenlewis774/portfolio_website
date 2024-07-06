@@ -1,28 +1,54 @@
 const tabLinks = document.getElementsByClassName("tab-links");
 const tabContents = document.getElementsByClassName("tab-contents");
 const works = document.getElementsByClassName("work");
-const btn = document.getElementById("btn");
-let hidden = true;
+const services = document.getElementsByClassName("service");
+const servicesBtn = document.getElementById("servicesBtn");
+const portfolioBtn = document.getElementById("portfolioBtn");
+let worksHidden = true;
+let servicesHidden = true;
 
-// Check if second row of elements are hidden and if so, display.
-// If however second row of elements are already displayed, hide.
-btn.addEventListener("click", event =>{
-  if(hidden){
+// Check if additional rows of elements in services section are hidden, and
+// display if so. If however additional rows of elements are already displayed, hide.
+servicesBtn.addEventListener("click", event =>{
+  if(servicesHidden){
+    for(service of services){
+      service.classList.remove("hidden");
+      servicesBtn.innerHTML = "See less";
+      servicesHidden = false;
+    }
+  }
+  else{
+    let i = 0;
+    for(service of services){
+      if(i > 2){    // Do not remove 'hidden' class from first row
+        service.classList.add("hidden");
+      }
+      i++;
+      servicesBtn.innerHTML = "See more";
+      servicesHidden = true;
+    }
+  }
+})
+
+// Check if additional rows of elements in portfolio section are hidden, and
+// display if so. If however additional rows of elements are already displayed, hide.
+portfolioBtn.addEventListener("click", event =>{
+  if(worksHidden){
     for(work of works){
       work.classList.remove("hidden");
-      btn.innerHTML = "See less";
-      hidden = false;
+      portfolioBtn.innerHTML = "See less";
+      worksHidden = false;
     }
   }
   else{
     let i = 0;
     for(work of works){
-      if(i > 2){
+      if(i > 2){    // Do not remove 'hidden' class from first row
         work.classList.add("hidden");
       }
       i++;
-      btn.innerHTML = "See more";
-      hidden = true;
+      portfolioBtn.innerHTML = "See more";
+      worksHidden = true;
     }
   }
 })
