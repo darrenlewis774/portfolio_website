@@ -6,6 +6,7 @@ const servicesBtn = document.getElementById("servicesBtn");
 const portfolioBtn = document.getElementById("portfolioBtn");
 let worksHidden = true;
 let servicesHidden = true;
+const additionalInfoBoxes = document.querySelectorAll(".additionalInfoBox");
 
 // Check if additional rows of elements in services section are hidden, and
 // display if so. If however additional rows of elements are already displayed, hide.
@@ -78,6 +79,25 @@ function openMenu(){
 function closeMenu(){
   // Move menu to be not visible
   sideMenu.style.right = "-200px";
+}
+
+function openAdditionalInfoBox(i) {
+  closeAdditionalInfoBox();
+  additionalInfoBoxes[i].classList.add("displayed");
+  if(i > 2 && i < 6){
+    additionalInfoBoxes[i].style.top = "45%";
+  }
+  else if(i > 5 && i < 9){
+    additionalInfoBoxes[i].style.top = "80%";
+  }
+}
+
+console.log(additionalInfoBoxes);
+
+function closeAdditionalInfoBox() {
+  additionalInfoBoxes.forEach(additionalInfoBox => {
+    additionalInfoBox.classList.remove("displayed");
+  })
 }
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbw7RfUgXJPEATzc81OB8dASgpjERbOZtoLU1AbCx96hzoZ77ZMaCMLn5oO6A7l9X6hZEQ/exec';
