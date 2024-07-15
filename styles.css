@@ -178,10 +178,10 @@ nav ul li a:hover::after{
   right: 5px;
   padding: 2.5px 5px;
 }
-/*.services-list .service:hover{
+.services-list .service:hover{
   background-color: rgb(255, 70, 70);
   transform: translateY(-10px);
-}*/
+}
 /* -- Portfolio -- */
 #portfolio{
   padding: 50px 0;
