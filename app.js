@@ -84,12 +84,6 @@ function closeMenu(){
 function openAdditionalInfoBox(i) {
   closeAdditionalInfoBox();
   additionalInfoBoxes[i].classList.add("displayed");
-  if(i > 2 && i < 6){
-    additionalInfoBoxes[i].style.top = "45%";
-  }
-  else if(i > 5 && i < 9){
-    additionalInfoBoxes[i].style.top = "80%";
-  }
 }
 
 console.log(additionalInfoBoxes);
