@@ -86,8 +86,6 @@ function openAdditionalInfoBox(i) {
   additionalInfoBoxes[i].classList.add("displayed");
 }
 
-console.log(additionalInfoBoxes);
-
 function closeAdditionalInfoBox() {
   additionalInfoBoxes.forEach(additionalInfoBox => {
     additionalInfoBox.classList.remove("displayed");

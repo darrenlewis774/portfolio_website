@@ -159,19 +159,23 @@ nav ul li a:hover::after{
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 25%;
-  left: -20px;
+  top: 50%;
+  left: 50%;
   width: 350px;
   height: auto;
+  transform: translate(-50%, -50%) scale(0);  /* Scale initially set to 0 to hide element */
+  transition: transform 0.5s; /* Performs above transform, creating animation effect to hide element */
   border: 2px solid;
   color: black;
   background-color: white;
   padding: 10px;
   box-shadow: 5px 0 10px;
-  display: none;
 }
 .services-list .service .additionalInfoBox.displayed{
-  display: block;
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);  /* Scale set to 1 to display element */
+  transition: transform 0.5s; /* Performs above transform, creating animation effect to display element */
 }
 .openBtn{
   text-decoration: none;
@@ -181,12 +185,27 @@ nav ul li a:hover::after{
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: scale 0.5s;
+}
+.openBtn:hover{
+  scale: 1.1;
+  transition: scale 0.5s;
 }
 .closeBtn{
   position: absolute;
   top: 5px;
   right: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
   padding: 2.5px 5px;
+  cursor: pointer;
+  transition: scale 0.5s;
+}
+.closeBtn:hover{
+  scale: 1.1;
+  transition: scale 0.5s;
 }
 .services-list .service:hover{
   background-color: rgb(255, 70, 70);
