@@ -350,7 +350,7 @@ form .btn2{
   text-align: center;
   padding: 25px 0;
   background-color: #262626;
-  font-weight: 300;
+  color: rgb(200, 200, 200);
   margin-top: 20px;
 }
 #msg{
